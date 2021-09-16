@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT</title>
+</head>
+<body>
+    <header>
+        <img src="jarditou_html_zip/images/jarditou_logo.jpg" width="280" height="80" title="logo Jarditou" alt="logo_jarditou"><br>
+        <p>La qualité depuis 70 ans</p>
+        <br>
+            <ul>
+                <li><a href="9-1-Index.html" title="Accueil">Accueil</a></li>
+                <li><a href="9-2-Tableau.html" title="Tableau">Tableau</a></li>
+                <li><a href="9-3-Contact.html" title="Contact">Contact</a></li>
+            </ul>
+        <img src="jarditou_html_zip/images/promotion.jpg" title="logo_promotion" alt="logo_promotion">
+    </header>
+        <h1>Contact</h1>
+        <hr>
+        * Ces zones sont obligatoires<br><br>
+    <form action="destination.php" method="POST">
+        <fieldset>
+            <legend>Vos coordonnées</legend>
+            <label for="nom">Votre nom* : </label><input type="text" name="nom" id="nom" required><br>
+            <label for="prénom">Votre prénom* : </label><input type="text" name="prénom" id="prénom" required><br><br>
+            <label for="sexe">Sexe* : </label><input type="radio" name="sexe" value="Féminin" id="sexe" required> Féminin
+            <input type="radio" name="sexe" value="Masculin"> Masculin<br><br>
+            <label for="date">Date de naissance* : </label><input type="date" name="ddn" id="date" required><br>
+            <label for="cp">Code Postal* : </label><input type="text" name="cp" id="cp" required><br>
+            <label for="adresse">Adresse : </label><input type="text" name="adresse" id="adresse"><br>
+            <label for="ville">Ville : </label><input type="text" name="ville" id="ville"><br>
+            <label for="email">Email* : </label><input type="text" name="email" id="email" value="loucash@laposte.net" required>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Votre demande</legend>
+            <label for="demandes">Sujet* : </label>
+            <select name="demandes" id="demandes" size="1">
+                <option disabled selected>Veuillez séléctionner un sujet</option>
+                <option>Mes commandes</option>
+                <option>Question sur un produit</option>
+                <option>Réclamation</option>
+                <option>Autres</option>
+            </select>
+            <br>
+            <label for="question">Votre question* : </label><textarea name="question" id="question" required></textarea><br>
+        </fieldset>
+        <br>
+        <input type=checkbox required> * J'accepte le traitement informatique de ce formulaire<br><br>
+        <input type="submit" value="Envoyer">
+        <input type="submit" value="Annuler">
+    </form>
+    <br>
+    <hr>
+    <footer>
+        <ul>
+            <li><a href="9-1-Index.html" title="Accueil">Mention légales</a></li>
+            <li><a href="9-1-Index.html" title="Accueil">Horaires</a></li>
+            <li><a href="9-1-Index.html" title="Accueil">Plan du site</a></li>
+        </ul>
+    </footer>
+</body>
+</html>

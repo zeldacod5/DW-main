@@ -1,0 +1,29 @@
+-- Que signifie le terme NoSQL? --
+Cela signifie que la bases de données n'utilisera pas le modèle connu qu'est SQL, celle ci ne sera pas une bases de données relationnel
+
+-- Pourquoi parle-t-on de "non relationnel"? --
+Parce que les valeurs sont triés de manière diforme et non-organisée, cela permet d'entrée et de selectionner des valeurs plus rapidement,
+assure une efficacité du traitement
+des demandes plus rapides. '
+
+-- Comment sont nées les bases NoSQL? --
+Les bases de données NoSQL ont été crée pour opérer un nouveau modèle de stockage et de gestion diffèrentes des Bases de données relationnels
+Ce sont les grosses entreprises GAFAM et autres qui ont crée les bases Nosql pour pallier au problèmes des grands volumes de données
+
+-- Ya t'il un seul type de base NoSQL? --
+Il existe plusieurs types de bases de données NoSQL
+-Bases de données orientées aggrégats
+-Orientés clés-valeurs
+-Orientés documents
+-Orientés colonnes
+-Orientés graphes
+
+-- Dans quel cas utiliser une base NoSQL? --
+Permet un plus grand stockage des données et traitement plus rapide des requêtes
+Si les requêtes se font sur de grand volumes de données cela est opérationnel
+Celle-ci est scalable cela veut dire que cela apporte une qualité optimale et minimal recquises partout
+
+En informatique matérielle et logicielle et en télécommunications,
+l'extensibilité ou scalabilité désigne la capacité d'un produit à s'adapter à un changement d'ordre de grandeur de la demande (montée en charge),
+en particulier sa capacité à maintenir ses fonctionnalités et ses performances en cas de forte demande.
+(définition prise sur Wikipédia) 

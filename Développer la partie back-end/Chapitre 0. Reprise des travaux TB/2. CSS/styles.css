@@ -1,0 +1,99 @@
+.nav {
+    background-color: black;
+    height: 50px;
+    line-height: 50px;
+    font-size: 15px;
+    padding-left: 30px;
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+
+nav a:active, nav a:focus, nav a:link, nav a:visited { color:white; }
+
+nav a:hover {color:blue; }
+
+.chien {
+    font-family:Arial, Helvetica, sans-serif;
+    display: inline;
+    color: green;
+    bottom: 30px;
+    left: 700px;
+    text-align: center;
+    font-size: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo_promotion {
+                                /* Fixe l'image de manière relative*/
+    position: relative;
+    overflow: hidden;
+    width: auto;
+    height: auto;
+                                /* Préserve le ratio de l'image */
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.texte-accueil {
+    display: inline-block;
+    width: 70%;
+    height: auto;
+    padding-left: 40px;
+}
+
+.colonne-droite {
+    display: inline-block;
+    background-color: lightgrey;
+    color: green;
+    height: 400px;
+    width: 478px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 15px;
+    margin-left: 10px;
+    position: relative;
+    left: 25px;
+    overflow: hidden;
+}
+
+hr {
+    font-size: 2pt;
+    color:snow;
+}
+
+h1 { color: red; }
+
+h3 { color: orange; }
+
+
+@media all and (max-width: 768px)
+{ 
+    h1 
+    { 
+        font-size : 40px; 
+    }
+    
+    h3 {
+        font-size: 30px;
+    }
+    
+    p {
+        font-size: 14px;
+    }
+
+    .colonne-droite {
+        display: none;
+    }
+    
+    img 
+{
+     max-width: 100%;
+     height: auto;
+}
+
+     .chien {
+         display: none;
+     }
+}
+
