@@ -11,7 +11,7 @@ echo sizeof($a[19002]);
 /* La validation du groupe 19002 se trouve en semaine 25 car c'est l'avant dernier et le tabeau comporte 26 valeurs.
 
 /* Exercice 2 */
-
+d
 
 
 ?> 
