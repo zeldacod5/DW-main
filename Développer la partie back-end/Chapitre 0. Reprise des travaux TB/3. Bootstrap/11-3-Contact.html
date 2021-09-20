@@ -47,7 +47,7 @@
     <section>
         <p>*Ces zones sont obligatoires</p>
         <h2>Vos coordonnées</h2>
-        <form action="destination.php" method="POST">
+        <form action="traitement.php" method="POST" id="forms">
                 <div class="form-group">
                   <label for="nom">Nom*</label>
                   <input type="text" class="form-control" id="nom" placeholder="Veuillez saisir votre nom" required>
@@ -75,19 +75,19 @@
                   </div>
                   <div class="form-group">
                     <label for="codepostal">Code Postal*</label>
-                    <input type="text" class="form-control" id="codepostal" required>
+                    <input type="text" class="form-control" id="codepostal" placeholder="Veuillez saisir votre code postal (5 chiffres)" required>
                   </div>
                   <div class="form-group">
                     <label for="adresse">Adresse</label>
-                    <input type="text" class="form-control" id="adresse">
+                    <input type="text" class="form-control" id="adresse" placeholder="Veuillez saisir votre adresse">
                   </div>
                   <div class="form-group">
                     <label for="ville">Ville</label>
-                    <input type="text" class="form-control" id="ville">
+                    <input type="text" class="form-control" id="ville" placeholder="Veuillez saisir votre ville">
                   </div>
                   <div class="form-group">
                     <label for="email">Email*</label>
-                    <input type="email" class="form-control" id="email" placeholder="ton-mail@afpa.fr" required>
+                    <input type="email" class="form-control" id="email" placeholder="your-mail@afpa.fr" required>
                   </div>
 
                   <h2>Votre demande</h2>
@@ -111,8 +111,8 @@
                     <label class="form-check-label" for="cochage"></label>
                   </div>
                     <br><br>
-                  <button type="button" class="btn btn-secondary">Envoyer</button>
-                  <button type="button" class="btn btn-secondary">Annuler</button>   
+                  <button type="button" class="btn btn-secondary" value="submit">Envoyer</button>
+                  <button type="button" class="btn btn-secondary">Annuler</button>  
         </form>
 
     </section>
@@ -140,6 +140,7 @@
 
 
   </div>
+<script src="Contact.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
