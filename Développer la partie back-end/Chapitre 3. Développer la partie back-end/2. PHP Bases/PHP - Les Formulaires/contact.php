@@ -47,18 +47,18 @@
     <section>
         <p>*Ces zones sont obligatoires</p>
         <h2>Vos coordonnées</h2>
-        <form action="traitement.php" method="POST" id="forms">
+        <form action="traitement.php" method="POST" id="form" name="form">
                 <div class="form-group">
                   <label for="nom">Nom*</label>
-                  <input type="text" class="form-control" id="nom" placeholder="Veuillez saisir votre nom" required>
+                  <input type="text" class="form-control" id="nom" placeholder="Veuillez saisir votre nom">
                 </div>
                 <div class="form-group">
                   <label for="prénom">Prénom*</label>
-                  <input type="text" class="form-control" id="prénom" placeholder="Veuillez saisir votre prénom" required>
+                  <input type="text" class="form-control" id="prenom" placeholder="Veuillez saisir votre prénom">
                 </div>
                 Sexe*<br>
                 <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="sexe" value="féminin" checked required>
+                    <input class="form-check-input" type="radio" name="sexe" value="féminin">
                     <label class="form-check-label" for="sexe">Féminin</label>
                   </div>
                   <div class="form-check form-check-inline">
@@ -71,11 +71,11 @@
                   </div>
                   <div class="form-group">
                     <label for="ddn"></label>
-                    <input type="date" class="form-control" id="ddn" placeholder="jj/mm/aaaa" required>
+                    <input type="date" class="form-control" id="ddn" placeholder="jj/mm/aaaa">
                   </div>
                   <div class="form-group">
                     <label for="codepostal">Code Postal*</label>
-                    <input type="text" class="form-control" id="codepostal" placeholder="Veuillez saisir votre code postal (5 chiffres)" required>
+                    <input type="text" class="form-control" id="codepostal" placeholder="Veuillez saisir votre code postal (5 chiffres)">
                   </div>
                   <div class="form-group">
                     <label for="adresse">Adresse</label>
@@ -87,13 +87,13 @@
                   </div>
                   <div class="form-group">
                     <label for="email">Email*</label>
-                    <input type="email" class="form-control" id="email" placeholder="your-mail@afpa.fr" required>
+                    <input type="email" class="form-control" id="email" placeholder="your-mail@afpa.fr">
                   </div>
 
                   <h2>Votre demande</h2>
                   <div class="form-group">
                     <label for="demandes">Sujet*</label>
-                    <select id="demandes" class="form-control" size="1" required>
+                    <select id="demandes" class="form-control" size="1">
                         <option selected disabled>Veuillez séléctionner un sujet</option>
                         <option>Mes commandes</option>
                         <option>Question sur un produit</option>
@@ -102,7 +102,7 @@
                     </select>
                   </div>
                   Votre question*
-                  <textarea class="form-control form-control-sm mb-3" required></textarea>
+                  <textarea class="form-control form-control-sm mb-3"></textarea>
 
                   </div>
                   
@@ -111,8 +111,7 @@
                     <label class="form-check-label" for="cochage"></label>
                   </div>
                     <br><br>
-                  <button type="button" class="btn btn-secondary" value="submit">Envoyer</button>
-                  <button type="button" class="btn btn-secondary">Annuler</button>  
+                  <input type="submit" value="Valider" id="btn_envoi">
         </form>
 
     </section>
@@ -140,7 +139,7 @@
 
 
   </div>
-<script src="Contact.js"></script>
+<script src="verif.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
