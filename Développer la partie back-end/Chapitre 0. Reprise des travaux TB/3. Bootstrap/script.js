@@ -15,7 +15,7 @@ form_formulaire.addEventListener('submit', (e)=>{
 
 console.log(e.target);
 
-// Nom //
+// Nom
 
 if(champ_nom.value == "" || champ_nom.value == null || regNom.exec(champ_nom.value) == false ){
     form_OK = false;
@@ -24,7 +24,7 @@ if(champ_nom.value == "" || champ_nom.value == null || regNom.exec(champ_nom.val
     document.getElementById("erreur1").innerHTML=erreur;
 }
 
-// Prenom //
+// Prenom
 
 if(champ_prenom.value == "" || champ_prenom.value == null || regPrenom.exec(champ_prenom.value) == false ){
     form_OK = false;
@@ -33,7 +33,7 @@ if(champ_prenom.value == "" || champ_prenom.value == null || regPrenom.exec(cham
     document.getElementById("erreur2").innerHTML=erreur;
 }
 
-// Sexe //
+// Sexe
 
 if( $('input[name=sexe]').is(':checked') ){
 } 
@@ -45,7 +45,7 @@ else
     document.getElementById("erreur3").innerHTML=erreur;
 }
 
-// Date De Naissance //
+// Date De Naissance
 
 if(champ_date_de_naissance.value == "" ){
     form_OK = false;
@@ -54,7 +54,7 @@ if(champ_date_de_naissance.value == "" ){
     document.getElementById("erreur4").innerHTML=erreur;
 }
 
-// Code Postal //
+// Code Postal
 
 if(champ_code_postal.value.length != 5 || isNaN(champ_code_postal.value)){
     form_OK = false;
@@ -63,7 +63,7 @@ if(champ_code_postal.value.length != 5 || isNaN(champ_code_postal.value)){
     document.getElementById("erreur5").innerHTML=erreur;
 }
 
-// Email //
+// Email
 
 if( !champ_email.value.includes("@")){
     form_OK = false;
@@ -72,7 +72,7 @@ if( !champ_email.value.includes("@")){
     document.getElementById("erreur6").innerHTML=erreur;
 }
 
-// Sujet //
+// Sujet
 
 if(champ_sujet.selectedIndex == 0) {
     form_OK = false;
@@ -81,7 +81,7 @@ if(champ_sujet.selectedIndex == 0) {
     document.getElementById("erreur7").innerHTML=erreur;
 }
 
-// Question //
+// Question
 
 if(champ_question.value == "" ){
     form_OK = false;
