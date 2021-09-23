@@ -1,19 +1,26 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tableaux PHP</title>
+</head>
 <body>
-<?php 
-$a = array("19001" => array("Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "", "", "Centre", "Centre", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Validation", "Validation"), 
-"19002" => array("Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Validation", ""), 
-"19003" => array("", "", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Centre", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "Stage", "", "", "Validation") 
-);
+    
 
-/* Exercice 1 */ 
-echo sizeof($a[19002]);
-/* La validation du groupe 19002 se trouve en semaine 25 car c'est l'avant dernier et le tabeau comporte 26 valeurs.
+<?php
+$tab_annee = array("Janvier"=>31, "Février"=>28, "Mars"=>31, "Avril"=>30, "Mai"=>30, "Juin"=>30,
+"Juillet"=>31, "Aout"=>31, "Septembre"=>30,"Octobre"=>31, "Novembre"=>30, "Décembre"=>31);
 
-/* Exercice 2 */
-d
+asort($tab_annee);
+foreach ($tab_annee as $key => $val) {
+    echo "<br>";
+    echo "$key = $val\n";
+}
+
+?>
 
 
-?> 
 </body>
 </html>
