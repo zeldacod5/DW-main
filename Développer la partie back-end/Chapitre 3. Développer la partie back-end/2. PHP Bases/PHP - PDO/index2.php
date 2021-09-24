@@ -56,7 +56,12 @@ while ($produit = $result->fetch(PDO::FETCH_OBJ))
    echo $produit->pro_id." – ".$produit->pro_libelle. "<br>";
 }
 ?>
+<?php
+while ($produit = $result->fetch(PDO::FETCH_OBJ)) 
+{
+   echo $produit->pro_id." – ".$produit->pro_libelle. "<br>";
+}
+?>
 <br>
-</html>
  </body>
  </html>
