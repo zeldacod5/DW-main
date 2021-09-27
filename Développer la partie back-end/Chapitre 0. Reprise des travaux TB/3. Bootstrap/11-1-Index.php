@@ -29,10 +29,10 @@
                 <a class="nav-link" href="#">Accueil <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="11-2-Tableau.html">Tableau</a>
+                <a class="nav-link" href="11-2-Tableau.php">Tableau</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="11-3-Contact.html">Contact</a>
+                <a class="nav-link" href="11-3-Contact.php">Contact</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
