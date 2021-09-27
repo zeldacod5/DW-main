@@ -50,12 +50,7 @@ $result->closeCursor();
  <br> 
  <?php echo $produit->pro_bloque; ?>
 <br>
-<?php
-while ($produit = $result->fetch(PDO::FETCH_OBJ)) 
-{
-   echo $produit->pro_id." – ".$produit->pro_libelle. "<br>";
-}
-?>
+
 <?php
 while ($produit = $result->fetch(PDO::FETCH_OBJ)) 
 {
