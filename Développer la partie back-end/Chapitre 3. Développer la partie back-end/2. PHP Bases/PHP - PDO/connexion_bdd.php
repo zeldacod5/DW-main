@@ -3,11 +3,11 @@ function connexionBase()
 {
    // Paramètre de connexion serveur
    $host = "localhost";
-   $login= "root";  // Votre loggin d'accès au serveur de BDD 
-   $password="";    // Le Password pour vous identifier auprès du serveur
-   $base = "jarditou";  // La bdd avec laquelle vous voulez travailler 
+   $login= "afpa";  // Votre loggin d'accès au serveur de BDD 
+   $password="Afpa1234";    // Le Password pour vous identifier auprès du serveur
+   $base = "Jarditou";  // La bdd avec laquelle vous voulez travailler 
 
-   try 
+   try
    {
         $db = new PDO('mysql:host=' .$host. ';charset=utf8;dbname=' .$base, $login, $password);
         return $db;
