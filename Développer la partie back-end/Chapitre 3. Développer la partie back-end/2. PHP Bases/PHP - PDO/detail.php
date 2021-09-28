@@ -8,7 +8,7 @@
 
      $db = connexionBase(); // Appel de la fonction de connexion
      $pro_id = $_GET["pro_id"];
-   $requete = "SELECT * FROM produits WHERE pro_id= 8".$pro_id;
+   $requete = "SELECT * FROM produits WHERE pro_id= 7".$pro_id;
 
     $result = $db->query($requete);
 
