@@ -9,11 +9,10 @@
     <title>TABLEAU BOOTSTRAP</title>
 </head>
 <body>
-    <div class='container'>
-    <header>
+<header>
         <div class="container-fluid">
             <div class="d-none d-lg-flex justify-content-between align-items-center">
-                <img class="col-2" src="jarditou_html_zip/images/jarditou_logo.jpg" alt="logo" title="logo">
+                <img class="col-2" src="jarditou_photos/jarditou_logo.jpg" alt="logo" title="logo">
                 <h1 class="pr-5" style="color: green">Tout le jardin</h1>
             </div>
         </div>
@@ -43,41 +42,73 @@
             </form>
             </div>
         </nav>
-        <img src="jarditou_html_zip/images/promotion.jpg" class="img-fluid" alt="promotion" tilte="promotion" width="100%">
+        <img src="jarditou_photos/promotion.jpg" class="img-fluid" alt="promotion" tilte="promotion" width="100%">
     </header>
     <br>
-    <table class="table">
-  <thead>
+<div class="container">
+<?php
+require "connexion_bdd.php"; // Inclusion de notre bibliothèque de fonctions
+$db = connexionBase();
+$pro_id = $_GET["pro_id"];// Appel de la fonction de connexion
+//$requete = "SELECT pro_id, pro_ref, pro_libelle FROM produits WHERE ISNULL(pro_bloque) ORDER BY pro_d_ajout DESC";
+$requete = "SELECT pro_photo, pro_id, pro_ref, pro_libelle, pro_prix, pro_stock, pro_couleur, pro_d_ajout, pro_d_modif, pro_bloque FROM produits ORDER BY pro_id";
+
+$result = $db->query($requete);
+
+if (!$result) 
+{
+    $tableauErreurs = $db->errorInfo();
+    echo $tableauErreur[2]; 
+    die("Erreur dans la requête");
+}
+
+if ($result->rowCount() == 0) 
+{
+   // Pas d'enregistrement
+   die("La table est vide");
+}
+
+echo "<table class='table table-striped table-bordered'>";
+echo '<thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Photo</th>
+      <th scope="col">ID</th>
+      <th scope="col">Référence</th>
+      <th scope="col">Libellé</th>
+      <th scope="col">Prix</th>
+      <th scope="col">Stock</th>
+      <th scope="col">Couleur</th>
+      <th scope="col">Ajout</th>
+      <th scope="col">Modif</th>
+      <th scope="col">Bloque</th>
     </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+  </thead>';
+while ($row = $result->fetch(PDO::FETCH_OBJ))
+{
+    echo"<tr class='table'>";
+    echo"<td><img src='jarditou_photos/".$row->pro_id.".".$row->pro_photo."' width='100'></td>";
+    echo"<td>".$row->pro_id."</td>";
+    echo"<td>".$row->pro_ref."</td>";
+    echo"<td><a href=\detail.php?pro_id=".$row->pro_id." title=\"".$row->pro_libelle."\">".$row->pro_libelle."</td>";
+    echo"<td>".$row->pro_prix."</td>";
+    echo"<td>".$row->pro_stock."</td>";
+    echo"<td>".$row->pro_couleur."</td>";
+    echo"<td>".$row->pro_d_ajout."</td>";
+    echo"<td>".$row->pro_d_modif."</td>";
+    
+    if($row->pro_bloque == 1)
+    {
+        echo"<td scope='row'>Oui</td>";
+    }else{
+        echo"<td scope='row'></td>";
+    }
+    echo"</tr>";
+}
+
+echo "</table>"; 
+?>
 <br>
-    <footer>
+<footer>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark mt-3">
             <!-- Copie de Navbar Ncode -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -106,3 +137,5 @@
 </html>
 </body>
 </html>
+</body>
+</html> 
