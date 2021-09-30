@@ -13,7 +13,7 @@
     <header>
         <div class="container-fluid">
             <div class="d-none d-lg-flex justify-content-between align-items-center">
-                <img class="col-2" src="jarditou_html_zip/images/jarditou_logo.jpg" alt="logo" title="logo">
+                <img class="col-2" src="jarditou_photos/jarditou_logo.jpg" alt="logo" title="logo">
                 <h1 class="pr-5" style="color: green">Tout le jardin</h1>
             </div>
         </div>
@@ -43,7 +43,7 @@
             </form>
             </div>
         </nav>
-        <img src="jarditou_html_zip/images/promotion.jpg" class="img-fluid" alt="promotion" tilte="promotion" width="100%">
+        <img src="jarditou_photos/promotion.jpg" class="img-fluid" alt="promotion" tilte="promotion" width="100%">
     </header>
     <section>
         <div class="table-responsive">
@@ -60,7 +60,7 @@
             </thead>
                 <tbody>         
                     <tr style="background-color: lightyellow;">
-                        <td><img src="jarditou_html_zip/jarditou_photos/7.jpg" class="img-fluid" width="100" height="100" alt="photo7"></td>
+                        <td><img src="jarditou_photos/7.jpg" class="img-fluid" width="100" height="100" alt="photo7"></td>
                         <td>7</td>
                         <td>Barbecues</td>
                         <td>Aramis</td>
@@ -68,7 +68,7 @@
                         <td>Brun</td>
                     </tr>
                     <tr>
-                        <td><img src="jarditou_html_zip/jarditou_photos/8.jpg" class="img-fluid" width="100" height="100" alt="photo8"></td>
+                        <td><img src="jarditou_photos/8.jpg" class="img-fluid" width="100" height="100" alt="photo8"></td>
                         <td>8</td>
                         <td>Barbecues</td>
                         <td>Athos</td>
@@ -76,7 +76,7 @@
                         <td>Noir</td>
                     </tr>
                     <tr style="background-color: lightyellow;">
-                        <td><img src="jarditou_html_zip/jarditou_photos/11.jpg" class="img-fluid" width="100" height="100" alt="photo11"></td>
+                        <td><img src="jarditou_photos/11.jpg" class="img-fluid" width="100" height="100" alt="photo11"></td>
                         <td>11</td>
                         <td>Barbecues</td>
                         <td>Clatronic</td>
@@ -84,7 +84,7 @@
                         <td>Chrome</td>
                     </tr>
                     <tr>
-                        <td><img src="jarditou_html_zip/jarditou_photos/12.jpg" class="img-fluid" width="100" height="100" alt="photo12"></td>
+                        <td><img src="jarditou_photos/12.jpg" class="img-fluid" width="100" height="100" alt="photo12"></td>
                         <td>12</td>
                         <td>Barbecues</td>
                         <td>Camping</td>
@@ -92,7 +92,7 @@
                         <td>Noir</td>
                     </tr>
                     <tr style="background-color: lightyellow;">
-                        <td><img src="jarditou_html_zip/jarditou_photos/13.jpg" class="img-fluid" width="150" height="100" alt="photo13"></td>
+                        <td><img src="jarditou_photos/13.jpg" class="img-fluid" width="150" height="100" alt="photo13"></td>
                         <td>13</td>
                         <td>Brouette</td>
                         <td>Green</td>

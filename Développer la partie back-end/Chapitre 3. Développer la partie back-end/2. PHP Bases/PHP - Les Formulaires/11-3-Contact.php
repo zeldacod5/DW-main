@@ -13,7 +13,7 @@
     <header>
         <div class="container-fluid">
             <div class="d-none d-lg-flex justify-content-between align-items-center">
-                <img class="col-2" src="jarditou_html_zip/images/jarditou_logo.jpg" alt="logo" title="logo">
+                <img class="col-2" src="jarditou_photos/jarditou_logo.jpg" alt="logo" title="logo">
                 <h1 class="pr-5" style="color: green">La qualité depuis 70 ans</h1>
             </div>
         </div>
@@ -43,7 +43,7 @@
             </form>
             </div>
         </nav>
-        <img src="jarditou_html_zip/images/promotion.jpg" class="img-fluid" alt="promotion" tilte="promotion" width="100%">
+        <img src="jarditou_photos/promotion.jpg" class="img-fluid" alt="promotion" tilte="promotion" width="100%">
     </header>
     
     <!--Formulaire -->

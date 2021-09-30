@@ -7,3 +7,5 @@ function writeMessage($sText)
    echo $html;
 }  
 ?>
+
+<?php

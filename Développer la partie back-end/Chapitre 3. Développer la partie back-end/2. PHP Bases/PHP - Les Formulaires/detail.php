@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>TABLEAU BOOTSTRAP</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <title>DETAILS DU PRODUITS</title>
 </head>
 <?php   
      require "connexion_bdd.php"; // Inclusion de notre bibliothèque de fonctions
@@ -14,9 +16,10 @@
      $pro_id = $_GET["pro_id"];
 
      try{
-     $requete = "SELECT pro_id, pro_ref, pro_cat_id, pro_libelle, pro_description, pro_prix, pro_stock, pro_couleur, pro_bloque, pro_d_ajout, pro_d_modif FROM produits";
-     $requete=$requete."JOIN categories ON cat_id = pro_cat_id";
+     $requete = "SELECT pro_id, pro_ref, pro_cat_id, pro_libelle, pro_description, pro_prix, pro_stock, pro_couleur, pro_bloque, pro_d_ajout, pro_d_modif FROM produits ";
+     $requete=$requete."JOIN categories ON cat_id = pro_cat_id ";
      $requete=$requete."WHERE pro_id=".$pro_id;
+     var_dump($requete);
      $result = $db->query($requete);
 
     // Renvoi de l'enregistrement sous forme d'un objet
@@ -29,52 +32,140 @@
        die('Connexion au serveur impossible.');
      }
    ?>
+
 <body>
-<header>
-        <div class="container-fluid">
-            <div class="d-none d-lg-flex justify-content-between align-items-center">
-                <img class="col-2" src="jarditou_photos/jarditou_logo.jpg" alt="logo" title="logo">
-                <h1 class="pr-5" style="color: green">Tout le jardin</h1>
-            </div>
-        </div>
+  <header>
+    <div class="container-fluid">
+      <div class="d-none d-lg-flex justify-content-between align-items-center">
+        <img class="col-2" src="jarditou_photos/jarditou_logo.jpg" alt="logo" title="logo">
+        <h1 class="pr-5" style="color: green">Tout le jardin</h1>
+      </div>
+    </div>
 
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">JardiTou.com</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                <a class="nav-link" href="11-1-Index.php">Accueil <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="11-2-Tableau.php">Tableau</a>
-                </li>
-                <li class="nav-item">
-                <a class="nav-link" href="11-3-Contact.php">Contact</a>
-                <li class="nav-item active">
-                <a class="nav-link" href="11-4-Listes.php">Liste des produits</a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Votre promotion" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
-            </form>
-            </div>
-        </nav>
-        <img src="jarditou_photos/promotion.jpg" class="img-fluid" alt="promotion" tilte="promotion" width="100%">
-    </header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="#">JardiTou.com</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="11-1-Index.php">Accueil <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="11-2-Tableau.php">Tableau</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="11-3-Contact.php">Contact</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="11-4-Listes.php">Liste des produits</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="text" placeholder="Votre promotion" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Rechercher</button>
+        </form>
+      </div>
+    </nav>
+    <img src="jarditou_photos/promotion.jpg" class="img-fluid" alt="promotion" tilte="promotion" width="100%">
+  </header>
 
-
-
+  <div class="row">
+      <div class="col-12">
   <form>
+  <fieldset>
+    <br>
     <div class="form-group">
       <label for="id">ID</label>
       <?php 
       echo "<input type='text' class='form-control' id='id' value='".$produit->pro_id."' disabled>";
       ?>
     </div>
+    <div class="form-group">
+      <label for="ref">Référence</label>
+      <?php 
+      echo "<input type='text' class='form-control' id='ref' value='".$produit->pro_ref."' disabled>";
+      ?>
+    </div>
+    <div class="form-group">
+      <label for="cat">Catégorie</label>
+      <?php 
+      echo "<input type='text' class='form-control' id='cat' value='".$produit->pro_cat_id."' disabled>";
+      ?>
+    </div>
+    <div class="form-group">
+      <label for="lib">Libellé</label>
+      <?php 
+      echo "<input type='text' class='form-control' id='lib' value='".$produit->pro_libelle."' disabled>";
+      ?>
+    </div>
+    <div class="form-group">
+      <label for="ref">Description</label>
+      <?php 
+      echo "<input type='text' class='form-control' id='desc' value='".$produit->pro_description."' disabled>";
+      ?>
+    </div>
+    <div class="form-group">
+      <label for="price">Prix</label>
+      <?php 
+      echo "<input type='text' class='form-control' id='price' value='".$produit->pro_prix."' disabled>";
+      ?>
+    </div>
+    <div class="form-group">
+      <label for="stock">Stock</label>
+      <?php 
+      echo "<input type='text' class='form-control' id='stock' value='".$produit->pro_stock."' disabled>";
+      ?>
+    </div>
+      <div class="form-group">
+        <label for="color">Couleur</label>
+        <?php 
+      echo "<input type='text' class='form-control' id='color' value='".$produit->pro_couleur."' disabled>";
+      ?>
+    </div>
+      <br>
+        <?php
+        echo "Produit bloqué : ";
+
+        if ($produit->pro_bloque == 1){
+            echo "<div class='form-check form-check-inline'>";
+            echo "<input class='form-check-input' type='radio' name='check' id='oui' value='oui' checked disabled>";
+            echo "<label class='form-check-label' for='oui'> Oui";
+            echo "</label></div>";
+            echo "<div class='form-check form-check-inline'>";
+            echo "<input class='form-check-input' type='radio' name='check' id='non' value='non' disabled>";
+            echo "<label class='form-check-label' for='non'> Non";
+            echo "</label></div>";
+        }else{
+            echo "<div class='form-check form-check-inline'>";
+            echo "<input class='form-check-input' type='radio' name='check' id='oui' value='oui'  disabled>";
+            echo "<label class='form-check-label' for='oui'> Oui";
+            echo "</label></div>";
+            echo "<div class='form-check form-check-inline'>";
+            echo "<input class='form-check-input' type='radio' name='check' id='non' value='non' checked disabled>";
+            echo "<label class='form-check-label' for='non'> Non";
+            echo "</label></div>";
+    };
+
+            echo "<br>";
+            echo "Date d'ajout : ";
+            echo " $produit->pro_d_ajout ";
+
+
+            echo "<br>";
+            echo "Date de modification : ";
+            echo " $produit->pro_d_modif ";
+?>
+<br>
+<br>
+<button type="submit" class="btn btn-success" id="btn1">Envoyer</button>
+<button type="button" class="btn btn-warning" id="btn2">Modifier</button>
+<button type="button" class="btn btn-danger" id="btn3">Retour</button>
+</fieldset>
   </form>
-   </body>
- </html>
+</div>
+</div>
+</body>
+
+</html>
