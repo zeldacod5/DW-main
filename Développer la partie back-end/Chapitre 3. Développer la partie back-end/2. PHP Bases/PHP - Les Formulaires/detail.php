@@ -19,7 +19,6 @@
      $requete = "SELECT pro_id, pro_ref, pro_cat_id, pro_libelle, pro_description, pro_prix, pro_stock, pro_couleur, pro_bloque, pro_d_ajout, pro_d_modif FROM produits ";
      $requete=$requete."JOIN categories ON cat_id = pro_cat_id ";
      $requete=$requete."WHERE pro_id=".$pro_id;
-     var_dump($requete);
      $result = $db->query($requete);
 
     // Renvoi de l'enregistrement sous forme d'un objet
@@ -159,9 +158,8 @@
 ?>
 <br>
 <br>
-<button type="submit" class="btn btn-success" id="btn1">Envoyer</button>
 <button type="button" class="btn btn-warning" id="btn2">Modifier</button>
-<button type="button" class="btn btn-danger" id="btn3">Retour</button>
+<a href="11-4-Listes.php" class="btn btn-danger">Retour</a>
 </fieldset>
   </form>
 </div>
