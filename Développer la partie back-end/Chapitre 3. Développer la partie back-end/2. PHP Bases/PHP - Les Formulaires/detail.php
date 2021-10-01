@@ -158,12 +158,11 @@
 ?>
 <br>
 <br>
-<button type="button" class="btn btn-warning" id="btn2">Modifier</button>
+<a href="modification.php?pro_id=<?php echo $pro_id ;?>" class="btn btn-warning">Modifier</button>
 <a href="11-4-Listes.php" class="btn btn-danger">Retour</a>
 </fieldset>
   </form>
 </div>
 </div>
 </body>
-
 </html>
