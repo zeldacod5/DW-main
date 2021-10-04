@@ -108,6 +108,8 @@ while ($row = $result->fetch(PDO::FETCH_OBJ))
 echo "</table>"; 
 ?>
 <br>
+<br>
+
 <footer>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark mt-3">
             <!-- Copie de Navbar Ncode -->

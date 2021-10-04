@@ -1,15 +1,21 @@
 <?php
-//Récuperation des valeurs
 
-$produit_cat_id = $_POST['cat_nom'];
-$reference = $_POST['pro_ref'];
-$libelle = $_POST['pro_libelle'];
-$description = $_POST['pro_description'];
-$prix = $_POST['pro_prix'];
-$stock = $_POST['pro_stock'];
-$couleur = $_POST['pro_couleur'];
-$photo = $_POST['pro_photo'];
-$bloque = $_POST['pro_bloque'];
+require_once "connexion_bdd.php"; // Inclusion de notre bibliothèque de fonctions
+$db = connexionBase(); // Appel de la fonction de connexion
+
+
+try {
+
+//Récuperation des valeurs
+$produit_cat_id = $_POST['cat'];
+$reference = $_POST['ref'];
+$libelle = $_POST['lib'];
+$description = $_POST['desc'];
+$prix = $_POST['prix'];
+$stock = $_POST['stock'];
+$couleur = $_POST['color'];
+$photo = $_POST['photo'];
+$bloque = $_POST['check'];
 
 var_dump($produit_cat_id);
 var_dump($reference);
@@ -20,9 +26,6 @@ var_dump($stock);
 var_dump($couleur);
 var_dump($photo);
 var_dump($bloque);
-
-require_once "connexion_bdd.php"; // Inclusion de notre bibliothèque de fonctions
-$db = connexionBase(); // Appel de la fonction de connexion
 
 $d_ajout = date("y/m/d");
 //Requete sql pour insertion de données
@@ -43,5 +46,17 @@ $requete->bindValue(":pro_bloque", $bloque);
 $resultat = $requete->execute();
 
 exit;
+
+}
+catch (Exception $e) {
+
+    echo "La connexion à la base de données a échoué ! <br>";
+    echo "Merci de bien vérifier vos paramètres de connexion ...<br>";
+    echo "Erreur : " . $e->getMessage() . "<br>";
+    echo "N° : " . $e->getCode();
+    die("Fin du script");
+}
+    header("Location: 11-4-Listes.php");
+    exit;
 
 ?>

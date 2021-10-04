@@ -8,30 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <title>DETAILS DU PRODUITS</title>
+  <title>Ajout d'un produit</title>
 </head>
-<?php   
-     require "connexion_bdd.php"; // Inclusion de notre bibliothèque de fonctions
-     $db = connexionBase(); // Appel de la fonction de connexion
-     $pro_id = $_GET["pro_id"];
-
-     try{
-     $requete = "SELECT pro_id, pro_ref, pro_cat_id, pro_libelle, pro_description, pro_prix, pro_stock, pro_couleur, pro_bloque, pro_d_ajout, pro_d_modif FROM produits ";
-     $requete=$requete."JOIN categories ON cat_id = pro_cat_id ";
-     $requete=$requete."WHERE pro_id=".$pro_id;
-     $result = $db->query($requete);
-
-    // Renvoi de l'enregistrement sous forme d'un objet
-    $produit = $result->fetch(PDO::FETCH_OBJ);
-     }
-     catch (Exeption $e)
-     {
-       echo 'Erreur : ' . $e->getMessage() . '<br>';
-       echo 'N° : ' . $e->getCode() . '<br>';
-       die('Connexion au serveur impossible.');
-     }
-   ?>
-
 <body>
   <header>
     <div class="container-fluid">
@@ -70,57 +48,51 @@
     <img src="jarditou_photos/promotion.jpg" class="img-fluid" alt="promotion" tilte="promotion" width="100%">
   </header>
 
-  <div class="row">
+<div class="row">
       <div class="col-12">
-  <form>
+  <form action="ajout.php" method="POST">
   <fieldset>
     <br>
     <div class="form-group">
-      <label for="id">ID</label>
-      <?php 
-      echo "<input type='text' class='form-control' id='id' value='".$produit->pro_id."' disabled>";
-      ?>
-    </div>
-    <div class="form-group">
       <label for="ref">Référence</label>
       <?php 
-      echo "<input type='text' class='form-control' id='ref' value='".$produit->pro_ref."' disabled>";
+      echo "<input type='text' class='form-control' name='ref' id='ref' value='".$produit->pro_ref."' >";
       ?>
     </div>
     <div class="form-group">
       <label for="cat">Catégorie</label>
       <?php 
-      echo "<input type='text' class='form-control' id='cat' value='".$produit->pro_cat_id."' disabled>";
+      echo "<input type='text' class='form-control' name='cat' id='cat' value='".$produit->pro_cat_id."' >";
       ?>
     </div>
     <div class="form-group">
       <label for="lib">Libellé</label>
       <?php 
-      echo "<input type='text' class='form-control' id='lib' value='".$produit->pro_libelle."' disabled>";
+      echo "<input type='text' class='form-control' name='lib' id='lib' value='".$produit->pro_libelle."' >";
       ?>
     </div>
     <div class="form-group">
       <label for="ref">Description</label>
       <?php 
-      echo "<input type='text' class='form-control' id='desc' value='".$produit->pro_description."' disabled>";
+      echo "<input type='text' class='form-control' name='desc' id='desc' value='".$produit->pro_description."' ";
       ?>
     </div>
     <div class="form-group">
       <label for="price">Prix</label>
       <?php 
-      echo "<input type='text' class='form-control' id='price' value='".$produit->pro_prix."' disabled>";
+      echo "<input type='text' class='form-control' name='prix' id='prix' value='".$produit->pro_prix."' >";
       ?>
     </div>
     <div class="form-group">
       <label for="stock">Stock</label>
       <?php 
-      echo "<input type='text' class='form-control' id='stock' value='".$produit->pro_stock."' disabled>";
+      echo "<input type='text' class='form-control' name='stock' id='stock' value='".$produit->pro_stock."' >";
       ?>
     </div>
       <div class="form-group">
         <label for="color">Couleur</label>
         <?php 
-      echo "<input type='text' class='form-control' id='color' value='".$produit->pro_couleur."' disabled>";
+      echo "<input type='text' class='form-control' name='color' id='color' value='".$produit->pro_couleur."' >";
       ?>
     </div>
       <br>
@@ -129,20 +101,20 @@
 
         if ($produit->pro_bloque == 1){
             echo "<div class='form-check form-check-inline'>";
-            echo "<input class='form-check-input' type='radio' name='check' id='oui' value='oui' checked disabled>";
+            echo "<input class='form-check-input' type='radio' name='check' id='oui' value='oui' checked >";
             echo "<label class='form-check-label' for='oui'> Oui";
             echo "</label></div>";
             echo "<div class='form-check form-check-inline'>";
-            echo "<input class='form-check-input' type='radio' name='check' id='non' value='non' disabled>";
+            echo "<input class='form-check-input' type='radio' name='check' id='non' value='non' >";
             echo "<label class='form-check-label' for='non'> Non";
             echo "</label></div>";
         }else{
             echo "<div class='form-check form-check-inline'>";
-            echo "<input class='form-check-input' type='radio' name='check' id='oui' value='oui'  disabled>";
+            echo "<input class='form-check-input' type='radio' name='check' id='oui' value='oui' >";
             echo "<label class='form-check-label' for='oui'> Oui";
             echo "</label></div>";
             echo "<div class='form-check form-check-inline'>";
-            echo "<input class='form-check-input' type='radio' name='check' id='non' value='non' checked disabled>";
+            echo "<input class='form-check-input' type='radio' name='check' id='non' value='non' checked>";
             echo "<label class='form-check-label' for='non'> Non";
             echo "</label></div>";
     };
@@ -158,13 +130,32 @@
 ?>
 <br>
 <br>
-<?php
-echo "<a href='modification.php?pro_id=$produit->pro_id' class='btn btn-warning'>Modifier</button>";
-?>
-<a href="11-4-Listes.php" class="btn btn-danger">Retour</a>
-</fieldset>
-  </form>
-</div>
-</div>
+<button type="submit" class="btn btn-success">Ajouter</button>
+    <a href="11-4-Listes.php" class="btn btn-danger">Retour</a>
+<footer>
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark mt-3">
+            <!-- Copie de Navbar Ncode -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+            </button>   
+            <div class="collapse navbar-collapse" id="collapsibleNavbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Mentions légales</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Horaires</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Plan du site</a>
+                    </li>
+                </ul>
+            </div> 
+        </nav>
+    </footer>
+    </div>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
