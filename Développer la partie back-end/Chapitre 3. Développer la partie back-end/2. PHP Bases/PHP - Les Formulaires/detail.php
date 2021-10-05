@@ -161,7 +161,8 @@
 <?php
 echo "<a href='modification.php?pro_id=$produit->pro_id' class='btn btn-warning'>Modifier</button>";
 ?>
-<a href="11-4-Listes.php" class="btn btn-danger">Retour</a>
+<a href="11-4-Listes.php" class="btn btn-secondary">Retour</a>
+<a href="delete.php" class="btn btn-danger">Supprimer ce produit</a>
 </fieldset>
   </form>
 </div>

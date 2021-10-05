@@ -1,62 +1,79 @@
+<!-- Connexion Base De Donnée  -->
+
 <?php
 
-require_once "connexion_bdd.php"; // Inclusion de notre bibliothèque de fonctions
-$db = connexionBase(); // Appel de la fonction de connexion
+require "connexion_bdd.php";
+$db = connexionBase();
 
+// Affiche Les Erreurs //
 
 try {
 
-//Récuperation des valeurs
-$produit_cat_id = $_POST['cat'];
-$reference = $_POST['ref'];
-$libelle = $_POST['lib'];
-$description = $_POST['desc'];
-$prix = $_POST['prix'];
-$stock = $_POST['stock'];
-$couleur = $_POST['color'];
-$photo = $_POST['photo'];
-$bloque = $_POST['check'];
+   $extension = substr(strrchr($_FILES["image"]["name"], "."), 1);
 
-var_dump($produit_cat_id);
-var_dump($reference);
-var_dump($libelle);
-var_dump($description);
-var_dump($prix);
-var_dump($stock);
-var_dump($couleur);
-var_dump($photo);
-var_dump($bloque);
+   $pro_ref = $_POST['ref'];
+   $pro_cat_id = $_POST['cat'];
+   $pro_libelle = $_POST['lib'];
+   $pro_description = $_POST['desc'];
+   $pro_prix = $_POST['prix'];
+   $pro_stock = $_POST['stock'];
+   $pro_couleur = $_POST['couleur'];
+   $pro_bloque = $_POST['bloque'];
+   $pro_d_ajout = date("Y-m-d");
+   $pro_photo = $extension;
 
-$d_ajout = date("y/m/d");
-//Requete sql pour insertion de données
-$requete = $db->prepare("INSERT INTO produits(pro_cat_id,pro_ref,pro_libelle,pro_description,pro_prix,pro_stock,pro_couleur,pro_photo,pro_d_ajout,pro_bloque) 
-                VALUES (:cat_nom, :pro_ref, :pro_libelle, :pro_description, :pro_prix, :pro_stock, :pro_couleur, :pro_photo, :pro_d_ajout, :pro_bloque)");
+   $erreur = "";
 
-$requete->bindValue(":cat_nom", $produit_cat_id);
-$requete->bindValue(":pro_ref", $reference);
-$requete->bindValue(":pro_libelle", $libelle);
-$requete->bindValue(":pro_description", $description);
-$requete->bindValue(":pro_prix", $prix);
-$requete->bindValue(":pro_stock", $stock);
-$requete->bindValue(":pro_couleur", $couleur);
-$requete->bindValue(":pro_photo", $photo);
-$requete->bindValue(":pro_d_ajout", $d_ajout);
-$requete->bindValue(":pro_bloque", $bloque);
+   $aMimeTypes = array("image/gif", "image/jpeg", "image/pjpeg", "image/png", "image/x-png", "image/tiff");
+   $finfo = finfo_open(FILEINFO_MIME_TYPE);
+   $mimetype = finfo_file($finfo, $_FILES["fichier"]["tmp_name"]);
+   finfo_close($finfo);
 
-$resultat = $requete->execute();
+// Requête //
 
-exit;
+   $requete = "INSERT INTO produits (pro_cat_id, pro_ref, pro_libelle, pro_description, pro_prix, pro_stock, pro_couleur, pro_photo, pro_d_ajout, pro_bloque) 
+               VALUES ('$pro_cat_id', '$pro_ref', '$pro_libelle', '$pro_description', '$pro_prix', '$pro_stock', '$pro_couleur', '$pro_photo', '$pro_d_ajout', '$pro_bloque')";
+
+   $result = $db->query($requete);
+   $id_prod = $db->lastInsertId();
+
+
+   $categorie = $result->fetch(PDO::FETCH_OBJ);
 
 }
 catch (Exception $e) {
 
-    echo "La connexion à la base de données a échoué ! <br>";
-    echo "Merci de bien vérifier vos paramètres de connexion ...<br>";
-    echo "Erreur : " . $e->getMessage() . "<br>";
-    echo "N° : " . $e->getCode();
-    die("Fin du script");
+   echo "La connexion à la base de données a échoué ! <br>";
+   echo "Merci de bien vérifier vos paramètres de connexion ...<br>";
+   echo "Erreur : " . $e->getMessage() . "<br>";
+   echo "N° : " . $e->getCode();
+   die("Fin du script");
 }
-    header("Location: 11-4-Listes.php");
-    exit;
+
+// Photo //
+
+if (!in_array($mimeType, $aMimeTypes))
+{
+   $errors .= '&eimage';
+   header("Location: formulaire_ajout.php?" . $erreur);
+}
+
+if ($erreur != NULL)
+{
+   exit;
+}
+
+else {
+
+   $requete1 = $db->prepare('SELECT pro_id FROM produits WHERE pro_ref = ?');
+   $requete1->bindValue(1, $_POST['ref']);
+   $resultat = $requete1->fetch(PDO::FETCH_OBJ);
+
+   move_uploaded_file($_FILES["image"]["tmp_name"], "jarditou_css/src/img/" . $id_prod . "." . $extension);    
+
+   header("Location: 11-4-Listes.php");
+   exit;
+
+}
 
 ?>

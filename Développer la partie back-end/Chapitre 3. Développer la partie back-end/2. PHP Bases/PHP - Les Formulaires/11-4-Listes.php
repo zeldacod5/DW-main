@@ -32,6 +32,7 @@
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="11-3-Contact.php">Contact</a>
+                </li>
                 <li class="nav-item active">
                 <a class="nav-link" href="#">Liste des produits</a>
                 </li>
@@ -45,9 +46,11 @@
         <img src="jarditou_photos/promotion.jpg" class="img-fluid" alt="promotion" tilte="promotion" width="100%">
     </header>
     <br>
+    
+    <br>
 <div class="container">
-<?php
-require "connexion_bdd.php"; // Inclusion de notre bibliothèque de fonctions
+    <?php
+require "connexion_bdd.php"; // Inclusion de notre bibliothèque de fonctions.
 $db = connexionBase();
 $pro_id = $_GET["pro_id"];// Appel de la fonction de connexion
 //$requete = "SELECT pro_id, pro_ref, pro_libelle FROM produits WHERE ISNULL(pro_bloque) ORDER BY pro_d_ajout DESC";

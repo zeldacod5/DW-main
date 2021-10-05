@@ -33,6 +33,7 @@
                 </li>
                 <li class="nav-item active">
                 <a class="nav-link" href="#">Contact</a>
+                </li>
                 <li class="nav-item">
                 <a class="nav-link" href="11-4-Listes.php">Listes des produits</a>
                 </li>
