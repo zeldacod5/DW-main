@@ -29,7 +29,7 @@ try {
    $mimetype = finfo_file($finfo, $_FILES["fichier"]["tmp_name"]);
    finfo_close($finfo);
 
-// Requête //
+   // Requête //
 
    $requete = "INSERT INTO produits (pro_cat_id, pro_ref, pro_libelle, pro_description, pro_prix, pro_stock, pro_couleur, pro_photo, pro_d_ajout, pro_bloque) 
                VALUES ('$pro_cat_id', '$pro_ref', '$pro_libelle', '$pro_description', '$pro_prix', '$pro_stock', '$pro_couleur', '$pro_photo', '$pro_d_ajout', '$pro_bloque')";
@@ -39,9 +39,7 @@ try {
 
 
    $categorie = $result->fetch(PDO::FETCH_OBJ);
-
-}
-catch (Exception $e) {
+} catch (Exception $e) {
 
    echo "La connexion à la base de données a échoué ! <br>";
    echo "Merci de bien vérifier vos paramètres de connexion ...<br>";
@@ -52,28 +50,23 @@ catch (Exception $e) {
 
 // Photo //
 
-if (!in_array($mimeType, $aMimeTypes))
-{
+if (!in_array($mimeType, $aMimeTypes)) {
    $errors .= '&eimage';
    header("Location: formulaire_ajout.php?" . $erreur);
 }
 
-if ($erreur != NULL)
-{
+if ($erreur != NULL) {
    exit;
-}
-
-else {
+} else {
 
    $requete1 = $db->prepare('SELECT pro_id FROM produits WHERE pro_ref = ?');
    $requete1->bindValue(1, $_POST['ref']);
    $resultat = $requete1->fetch(PDO::FETCH_OBJ);
 
-   move_uploaded_file($_FILES["image"]["tmp_name"], "jarditou_css/src/img/" . $id_prod . "." . $extension);    
+   move_uploaded_file($_FILES["image"]["tmp_name"], "jarditou_photos/" . $id_prod . "." . $extension);
 
    header("Location: 11-4-Listes.php");
    exit;
-
 }
 
 ?>
