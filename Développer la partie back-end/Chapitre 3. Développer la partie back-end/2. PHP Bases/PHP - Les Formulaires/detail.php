@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <title>DETAILS DU PRODUITS</title>
+  <title>DETAILSDUPRODUITS</title>
 </head>
 <?php
 require "connexion_bdd.php"; // Inclusion de notre bibliothèque de fonctions
@@ -158,12 +158,36 @@ try {
           echo "<a href='modification.php?pro_id=$produit->pro_id' class='btn btn-warning'>Modifier</button>";
           ?>
           <a href="11-4-Listes.php" class="btn btn-secondary">Retour</a>
-          <a href="delete.php?pro_id=<?php echo $produit->pro_id ?>" id="btn1" class="btn btn-danger">Supprimer ce produit</a>
+          <button type="button" id="btn1" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">Supprimer ce produit</button>
 
         </fieldset>
       </form>
     </div>
   </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Est-tu sur de vouloir supprimer ce produit?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Tu ne pourras pas revenir en arrière...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Non</button>
+          <a href="delete.php?pro_id=<?php echo $produit->pro_id ?>" id="btn1" class="btn btn-danger">Supprimer ce produit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
 </html>
